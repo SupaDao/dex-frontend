@@ -1,0 +1,340 @@
+[
+	{
+		"type": "constructor",
+		"inputs": [
+			{
+				"name": "_factory",
+				"type": "address",
+				"internalType": "address"
+			},
+			{
+				"name": "_weth9",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "receive",
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "FACTORY",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "WETH9",
+		"inputs": [],
+		"outputs": [
+			{
+				"name": "",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"stateMutability": "view"
+	},
+	{
+		"type": "function",
+		"name": "concentratedPoolSwapCallback",
+		"inputs": [
+			{
+				"name": "amount0Delta",
+				"type": "int256",
+				"internalType": "int256"
+			},
+			{
+				"name": "amount1Delta",
+				"type": "int256",
+				"internalType": "int256"
+			},
+			{
+				"name": "data",
+				"type": "bytes",
+				"internalType": "bytes"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "nonpayable"
+	},
+	{
+		"type": "function",
+		"name": "exactInput",
+		"inputs": [
+			{
+				"name": "params",
+				"type": "tuple",
+				"internalType": "struct Router.ExactInputParams",
+				"components": [
+					{
+						"name": "path",
+						"type": "bytes",
+						"internalType": "bytes"
+					},
+					{
+						"name": "recipient",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "amountIn",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "amountOutMinimum",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "deadline",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"outputs": [
+			{
+				"name": "amountOut",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "exactInputSingle",
+		"inputs": [
+			{
+				"name": "params",
+				"type": "tuple",
+				"internalType": "struct Router.ExactInputSingleParams",
+				"components": [
+					{
+						"name": "tokenIn",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "tokenOut",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "fee",
+						"type": "uint24",
+						"internalType": "uint24"
+					},
+					{
+						"name": "recipient",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "amountIn",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "amountOutMinimum",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "sqrtPriceLimitX96",
+						"type": "uint160",
+						"internalType": "uint160"
+					},
+					{
+						"name": "deadline",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"outputs": [
+			{
+				"name": "amountOut",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "exactOutput",
+		"inputs": [
+			{
+				"name": "params",
+				"type": "tuple",
+				"internalType": "struct Router.ExactOutputParams",
+				"components": [
+					{
+						"name": "path",
+						"type": "bytes",
+						"internalType": "bytes"
+					},
+					{
+						"name": "recipient",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "amountOut",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "amountInMaximum",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "deadline",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"outputs": [
+			{
+				"name": "amountIn",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "exactOutputSingle",
+		"inputs": [
+			{
+				"name": "params",
+				"type": "tuple",
+				"internalType": "struct Router.ExactOutputSingleParams",
+				"components": [
+					{
+						"name": "tokenIn",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "tokenOut",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "fee",
+						"type": "uint24",
+						"internalType": "uint24"
+					},
+					{
+						"name": "recipient",
+						"type": "address",
+						"internalType": "address"
+					},
+					{
+						"name": "amountOut",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "amountInMaximum",
+						"type": "uint256",
+						"internalType": "uint256"
+					},
+					{
+						"name": "sqrtPriceLimitX96",
+						"type": "uint160",
+						"internalType": "uint160"
+					},
+					{
+						"name": "deadline",
+						"type": "uint256",
+						"internalType": "uint256"
+					}
+				]
+			}
+		],
+		"outputs": [
+			{
+				"name": "amountIn",
+				"type": "uint256",
+				"internalType": "uint256"
+			}
+		],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "multicall",
+		"inputs": [
+			{
+				"name": "data",
+				"type": "bytes[]",
+				"internalType": "bytes[]"
+			}
+		],
+		"outputs": [
+			{
+				"name": "results",
+				"type": "bytes[]",
+				"internalType": "bytes[]"
+			}
+		],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "refundETH",
+		"inputs": [],
+		"outputs": [],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "function",
+		"name": "unwrapWETH9",
+		"inputs": [
+			{
+				"name": "amountMinimum",
+				"type": "uint256",
+				"internalType": "uint256"
+			},
+			{
+				"name": "recipient",
+				"type": "address",
+				"internalType": "address"
+			}
+		],
+		"outputs": [],
+		"stateMutability": "payable"
+	},
+	{
+		"type": "error",
+		"name": "SafeERC20FailedOperation",
+		"inputs": [
+			{
+				"name": "token",
+				"type": "address",
+				"internalType": "address"
+			}
+		]
+	}
+]
