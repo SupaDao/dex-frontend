@@ -51,7 +51,7 @@ export default function PositionsList() {
 						<div className="text-sm text-zinc-400">
 							Pool:{" "}
 							<span className="text-zinc-300 font-mono">
-								{pos!.pool.slice(0, 6)}...{pos!.pool.slice(-4)}
+								{(pos.pool as string).slice(0, 6)}...{(pos.pool as string).slice(-4)}
 							</span>
 						</div>
 						<div className="text-sm text-zinc-400">
