@@ -29,7 +29,7 @@ export default function Header() {
 					className="flex items-center gap-2 group">
 					<div className="w-8 h-8 relative flex items-center justify-center">
 						<Image
-							src="/supadao-logo.png"
+							src="/icon.png"
 							alt="Supadao logo"
 							width={24}
 							height={24}
