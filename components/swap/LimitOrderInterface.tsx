@@ -315,7 +315,7 @@ export default function LimitOrderInterface({
 			{/* My Orders Dashboard */}
 			<div className="pt-6">
 				<MyOrdersTable
-					orderBookAddress={orderBookAddress || undefined}
+					orderBookAddress={orderBookAddress}
 					token0={tokenIn}
 					token1={tokenOut}
 				/>
