@@ -1,16 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
 import { useReadContracts } from "wagmi";
 import { formatUnits } from "viem";
 import { type Address } from "viem";
-import { Layers, Activity, DollarSign, TrendingUp } from "lucide-react";
-import {
-	TOKENS,
-	getTokenByAddress,
-	getDisplaySymbol,
-} from "@/lib/contracts/tokens";
-import { getTickAtPrice, getPriceFromTick } from "@/lib/web3/liquidityMath";
+import { Layers, Activity, TrendingUp } from "lucide-react";
+import { getDisplaySymbol, getTokenByAddress } from "@/lib/contracts/tokens";
 
 const poolAbi = [
 	{
@@ -156,7 +152,9 @@ export default function PoolStats({ poolAddress }: PoolStatsProps) {
 				functionName: "decimals",
 			},
 		],
-		enabled: !!token0Addr && !!token1Addr,
+		query: {
+			enabled: !!token0Addr && !!token1Addr,
+		},
 	});
 
 	if (isLoading || !data) {
@@ -171,10 +169,12 @@ export default function PoolStats({ poolAddress }: PoolStatsProps) {
 	const t1Meta = getTokenByAddress(token1Addr || "");
 
 	const token0 = {
+		address: token0Addr,
 		symbol: t0Meta?.symbol || (tokenMetaData?.[0]?.result as string) || "T0",
 		decimals: t0Meta?.decimals || (tokenMetaData?.[1]?.result as number) || 18,
 	};
 	const token1 = {
+		address: token1Addr,
 		symbol: t1Meta?.symbol || (tokenMetaData?.[2]?.result as string) || "T1",
 		decimals: t1Meta?.decimals || (tokenMetaData?.[3]?.result as number) || 18,
 	};
@@ -246,7 +246,7 @@ export default function PoolStats({ poolAddress }: PoolStatsProps) {
 					</div>
 					<div className="text-3xl font-bold text-white">
 						{fee ? fee / 10000 : 0}%
-						<span className="text-xs bg-[var(--brand-lime)]/20 text-[var(--brand-lime)] px-2 py-1 rounded-full ml-3 align-middle font-bold border border-[var(--brand-lime)]/20">
+						<span className="text-xs bg-(--brand-lime)/20 text-brand-lime) px-2 py-1 rounded-full ml-3 align-middle font-bold border border-(--brand-lime)/20">
 							TIER
 						</span>
 					</div>

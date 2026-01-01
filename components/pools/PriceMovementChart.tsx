@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/purity */
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
@@ -131,7 +133,7 @@ export default function PriceMovementChart({
 							}}
 							itemStyle={{ color: "#e4e4e7" }}
 							labelStyle={{ color: "#a1a1aa", marginBottom: "0.25rem" }}
-							formatter={(value: number) => [value.toFixed(6), "Price"]}
+							formatter={(value: any) => [Number(value).toFixed(6), "Price"]}
 						/>
 						<Area
 							type="monotone"

@@ -7,7 +7,7 @@ import { useAppKit } from "@reown/appkit/react";
 import { useRouter } from "next/navigation";
 import { parseUnits, formatUnits } from "viem";
 import Link from "next/link";
-import { ArrowLeft, ChevronDown, Info, Plus, Settings, X } from "lucide-react";
+import { ArrowLeft, ChevronDown, Info, Settings, X } from "lucide-react";
 import { toast } from "sonner";
 import { TokenSelector } from "@/components/swap/TokenSelector";
 import {
@@ -224,6 +224,8 @@ export default function AddLiquidityForm({
 		feeTier,
 		minPrice,
 		maxPrice,
+		t0Details.name,
+		t1Details.name,
 	]);
 
 	// Inputs

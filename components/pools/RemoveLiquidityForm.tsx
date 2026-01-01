@@ -88,9 +88,9 @@ export default function RemoveLiquidityForm({
 		token0: t0Addr,
 		token1: t1Addr,
 		fee: poolFee,
-	} = usePoolInfo(position?.pool as Address);
+	} = usePoolInfo(position?.pool as Address | undefined);
 
-	const { data: slot0 } = usePoolState(position?.pool as `0x${string}`);
+	const { data: slot0 } = usePoolState(position?.pool as Address | undefined);
 	const sqrtPriceX96 = slot0?.[0];
 
 	const t0Details = useTokenDetails(t0Addr);
@@ -483,7 +483,7 @@ export default function RemoveLiquidityForm({
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-flex items-center gap-2 text-[10px] text-zinc-500 hover:text-[var(--brand-lime)] transition-colors font-black uppercase tracking-widest">
-								<receipt className="w-3 h-3" />
+								<Receipt className="w-3 h-3" />
 								Transaction Hash: {hash.slice(0, 8)}...{hash.slice(-8)}
 							</a>
 						</div>

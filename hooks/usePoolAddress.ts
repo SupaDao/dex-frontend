@@ -34,6 +34,8 @@ export function usePoolAddress(
 		abi: factoryAbi,
 		functionName: "getPool",
 		args: addressA && addressB ? [addressA, addressB, fee] : undefined,
-		enabled: !!addressA && !!addressB,
+		query: {
+			enabled: !!addressA && !!addressB,
+		},
 	});
 }

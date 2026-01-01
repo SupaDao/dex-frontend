@@ -28,10 +28,10 @@ export function usePoolState(poolAddress: Address | undefined) {
 		address: poolAddress,
 		abi: poolAbi,
 		functionName: "slot0",
-		enabled:
-			!!poolAddress &&
-			poolAddress !== "0x0000000000000000000000000000000000000000",
 		query: {
+			enabled:
+				!!poolAddress &&
+				poolAddress !== "0x0000000000000000000000000000000000000000",
 			refetchInterval: 5000,
 		},
 	});

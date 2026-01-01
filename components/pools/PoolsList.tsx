@@ -107,7 +107,7 @@ export default function PoolsList() {
 
 		// Group by pool
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const groups: Record<string, { pool: unknown; positions: any[] }> = {};
+		const groups: Record<string, { pool: any; positions: any[] }> = {};
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		filtered.forEach((pos: any) => {
 			if (!groups[pos.pool]) {
